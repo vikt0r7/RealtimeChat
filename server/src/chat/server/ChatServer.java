@@ -11,13 +11,17 @@ public class ChatServer implements TCPConnectionListener {
 
     private final ArrayList<TCPConnection> connections = new ArrayList<>();
 
+    /* CONSTANT FOR CONNECTION TO SERVER (CHANGE IT) */
+    private static final int PORT = 8189;
+
+    /* RUN SERVER SIDE */
     public static void main(String[] args) {
             new ChatServer();
     }
 
     private ChatServer(){
         System.out.println("Server running...");
-        try(ServerSocket serverSocket = new ServerSocket(8189)){
+        try(ServerSocket serverSocket = new ServerSocket(PORT)){
             while (true){
                 try {
                   new TCPConnection(this, serverSocket.accept());

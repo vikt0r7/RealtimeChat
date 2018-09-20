@@ -12,6 +12,7 @@ public class TCPConnection {
     private final BufferedWriter out;
     private final TCPConnectionListener eventListener;
 
+
     public TCPConnection(TCPConnectionListener eventListener, String ipAdress, int port) throws IOException{
         this(eventListener, new Socket( ipAdress, port)); //Викликаю другий коструктор
 
